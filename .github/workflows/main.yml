@@ -15,6 +15,6 @@ jobs:
 
       - name: copy to windows server
         run: |
-        sshpass -p "${{ secrets.PASSWORD }}" \
-        scp dhamo.html -o StrictHostKeyChecking=no \
-        "${{ secrets.USERNAME }}"@${{ secrets.IP}}:"C:\inetpub\wwwroot\"
+          sshpass -p "${{ secrets.PASSWORD }}" \
+            scp dhamo.html -o StrictHostKeyChecking=no \
+            "${{ secrets.USERNAME }}"@${{ secrets.IP}}:"C:\inetpub\wwwroot\"
