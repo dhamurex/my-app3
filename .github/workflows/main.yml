@@ -1,0 +1,17 @@
+name: sample html export
+
+on:
+  push:
+    branch:
+      - master
+    
+jobs:
+  deploymentjob:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: copy to windows server
+        run: sshpass -p ${{ secrets.PASSWORD}} scp -r index.html ${{secrets.USERNAME}}@${{secrets.IP}}:'C:/inetpub/wwwroot/'
