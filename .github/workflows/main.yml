@@ -17,4 +17,4 @@ jobs:
         run: |
           sshpass -p "${{ secrets.PASSWORD }}" \
             scp -o StrictHostKeyChecking=no dhamo.html \
-            ${{ secrets.USERNAME }}@${{ secrets.IP}}:"C:\inetpub\wwwroot\"
+            "${{ secrets.USERNAME }}@${{ secrets.IP}}:"C:\inetpub\wwwroot\"
